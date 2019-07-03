@@ -1,4 +1,4 @@
-# BookClub
+# BookClub [![Build Status](https://travis-ci.org/stephenfeagin/BookClub.svg?branch=master)](https://travis-ci.org/stephenfeagin/BookClub)
 
 **Django app for book reviews and discussions**
 
