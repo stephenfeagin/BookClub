@@ -22,8 +22,8 @@ class Book(models.Model):
 class Author(models.Model):
     last_name = models.CharField(max_length=100, db_index=True)
     given_name = models.CharField(max_length=100, blank=True)
-    date_of_birth = models.DateField(null=True)
-    date_of_death = models.DateField(null=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    date_of_death = models.DateField(null=True, blank=True)
 
     def __str__(self):
         birth_year = self.date_of_birth.year if self.date_of_birth else ""
@@ -32,6 +32,12 @@ class Author(models.Model):
         full_name = f"{self.last_name}" + (f", {self.given_name}" if self.given_name else "")
         return f"{full_name}{lifespan}"
 
+    class Meta:
+        ordering = ["last_name", "given_name", "date_of_birth"]
+
 
 class Genre(models.Model):
     name = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.name

@@ -88,7 +88,7 @@ class TestBookModel(TestCase):
         authors = [au for au in omens.author.all()]
         gaiman = Author.objects.get(last_name__exact="Gaiman")
         pratchett = Author.objects.get(last_name__exact="Pratchett")
-        self.assertEqual(authors, [pratchett, gaiman])
+        self.assertEqual(authors, [gaiman, pratchett])
 
     def test_multiple_genres(self):
         omens = Book.objects.get(title__exact="Good Omens")
