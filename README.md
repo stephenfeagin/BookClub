@@ -34,3 +34,8 @@ Then deploy it using Django's built-in server:
 ```bash
 python3 manage.py runserver
 ```
+
+## Attribution
+
+I followed an [article at testdriven.io](https://testdriven.io/blog/django-custom-user-model/) on creating a custom
+user model in Django.
