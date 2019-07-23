@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Author: {{ author }}</h1>
+
+    <ul>
+        {% for book in author.book_set.all %}
+            <li><a href="#">{{ book.title }} ({{ book.pub_year }})</a></li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

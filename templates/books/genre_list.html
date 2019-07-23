@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if genre_list %}
+        <ul>
+            {% for genre in genre_list %}
+                <li><a href="{% url 'genre-detail' genre.id %}">{{ genre.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p><strong>There are no books!</strong></p>
+    {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>{{ genre.name }}</h1>
+
+    {% if genre.book_set %}
+        <ul>
+            {% for book in genre.book_set.all %}
+                <li><a href="{% url 'book-detail' book.id %}">{{ book }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p><strong>There are no books in this genre!</strong></p>
+    {% endif %}
+
+{% endblock content %}
